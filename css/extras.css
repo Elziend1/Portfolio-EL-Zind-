@@ -1,0 +1,129 @@
+/* Extras: certificate logo, Quick Look, contract button, Apple liquid glass */
+
+/* combined additions */
+.clg {
+  position:absolute;
+  inset:11%;
+  width:78%;
+  height:78%;
+  color:var(--acc);
+  opacity:.4;
+  pointer-events:none
+}
+.clg .rg {
+  transform-origin:100px 100px;
+  animation:rgs 14s linear infinite
+}
+@keyframes rgs {
+  to {
+    transform:rotate(360deg)
+  }
+}
+.clg .ck {
+  stroke-dasharray:140;
+  animation:ckd 3.4s ease-in-out infinite
+}
+@keyframes ckd {
+  0% {
+    stroke-dashoffset:140
+  }
+  55%,100% {
+    stroke-dashoffset:0
+  }
+}
+.cc {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none;
+  outline-offset:3px
+}
+.cc:focus-visible {
+  outline:2px solid var(--acc)
+}
+.ctb {
+  height:60px;
+  padding:0 22px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:var(--fg);
+  font:inherit;
+  font-weight:700;
+  font-size:.85rem;
+  cursor:pointer;
+  transition:transform .4s cubic-bezier(.175,.885,.32,1.275),background .3s,color .3s
+}
+.ctb:hover,.ctb:focus-visible {
+  transform:translateY(-5px);
+  background:var(--acc);
+  color:#001419;
+  border-color:transparent
+}
+[data-theme="light"] .ctb {
+  background:#fff;
+  border-color:#c9dde5
+}
+/* Apple devices only: clear, water-like liquid glass */
+.apple nav,.apple .dc,.apple .sg,.apple .cc,.apple .repo,.apple .pills div,.apple .card3,.apple .qb,.apple .screen,.apple .btn:not(.p),.apple .sb,.apple .ctb {
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.2) 46%,transparent 62%) 0 0/260% 260%,linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.012) 45%,rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(12px) saturate(240%) brightness(1.14) contrast(1.06);
+  backdrop-filter:blur(12px) saturate(240%) brightness(1.14) contrast(1.06);
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.75),inset 1px 0 1px rgba(255,255,255,.28),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 -16px 26px rgba(120,225,255,.09),0 22px 50px rgba(0,0,0,.32)
+}
+@keyframes sheen {
+  to {
+    background-position:100% 100%,0 0
+  }
+}
+.apple .dc,.apple .sg,.apple .cc,.apple .repo {
+  transition:border-radius .7s cubic-bezier(.3,1.7,.4,1),transform .4s,border-color .3s
+}
+.apple .dc:hover,.apple .sg:hover,.apple .repo:hover {
+  border-radius:30px 20px 32px 22px
+}
+.apple[data-theme="light"] nav,.apple[data-theme="light"] .dc,.apple[data-theme="light"] .sg,.apple[data-theme="light"] .cc,.apple[data-theme="light"] .repo,.apple[data-theme="light"] .pills div,.apple[data-theme="light"] .card3,.apple[data-theme="light"] .qb,.apple[data-theme="light"] .screen,.apple[data-theme="light"] .btn:not(.p),.apple[data-theme="light"] .sb,.apple[data-theme="light"] .ctb {
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.7) 46%,transparent 62%) 0 0/260% 260%,linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.08) 50%,rgba(255,255,255,.34));
+  border-color:rgba(255,255,255,.95);
+  box-shadow:inset 0 1.5px 1px #fff,inset 0 -10px 22px rgba(120,190,255,.14),0 18px 40px rgba(40,80,120,.18)
+}
+.apple .sw2:hover .sb,.apple .sw2.open .sb {
+  border-color:transparent
+}
+@media(prefers-reduced-motion:reduce) {
+  .apple * {
+    animation:none!important
+  }
+}
+.card3 {
+  overflow:hidden
+}
+.card3 .pface,.card3 .phand {
+  display:block;
+  position:absolute;
+  left:-11%;
+  bottom:0;
+  top:auto;
+  width:122%;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.35));
+  pointer-events:none
+}
+.sg .chips span {
+  border-radius:10px;
+  padding:6px 12px
+}
+.sg .xm {
+  font-size:.75rem;
+  color:var(--acc);
+  margin:-8px 0 10px
+}
+.sg p {
+  color:var(--mut);
+  font-size:.92rem;
+  line-height:1.6
+}
+section#contact {
+  z-index:5
+}
